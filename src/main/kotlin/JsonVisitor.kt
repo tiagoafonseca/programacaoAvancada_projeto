@@ -1,8 +1,8 @@
-sealed interface JsonVisitor {
-    fun visit(value: JsonString)
-    fun visit(value: JsonNumber)
-    fun visit(value: JsonBoolean)
-    fun visit(value: JsonNull)
-    fun visit(value: JsonArray)
-    fun visit(value: JsonObject)
+sealed interface JsonValidator {
+    fun validate(value: JsonString)
+    fun validate(value: JsonNumber)
+    fun validate(value: JsonBoolean)
+    fun validate(value: JsonNull)
+    fun validate(value: JsonArray)
+    fun validate(value: JsonObject)
 }
