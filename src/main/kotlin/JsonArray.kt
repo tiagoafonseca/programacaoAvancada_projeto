@@ -18,8 +18,8 @@ data class JsonArray(val elements: List<JsonValue>) : JsonValue {
         return JsonArray(mappedElements)
     }
 
-    override fun accept(visitor: JsonVisitor) {
-        visitor.visit(this)
-        elements.forEach { it.accept(visitor) }
+    override fun isValidType(validator: JsonValidator) {
+        validator.validate(this)
+        elements.forEach { it.isValidType(validator) }
     }
 }

@@ -3,7 +3,7 @@
  */
 sealed interface JsonValue {
     fun toJsonString(): String
-    fun accept(visitor: JsonVisitor)
+    fun isValidType(validator: JsonValidator)
 }
 
 

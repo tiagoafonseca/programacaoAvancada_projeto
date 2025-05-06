@@ -1,15 +1,15 @@
 
-class JsonValidatorVisitor: JsonVisitor {
+class JsonBaseValidator: JsonValidator {
 
     var isValid: Boolean = true
         private set
 
-    override fun visit(value: JsonString) {}
-    override fun visit(value: JsonNumber) {}
-    override fun visit(value: JsonBoolean) {}
-    override fun visit(value: JsonNull) {}
+    override fun validate(value: JsonString) {}
+    override fun validate(value: JsonNumber) {}
+    override fun validate(value: JsonBoolean) {}
+    override fun validate(value: JsonNull) {}
 
-    override fun visit(value: JsonArray) {
+    override fun validate(value: JsonArray) {
         // Recolhe os tipos dos elementos (ignorando nulls)
         val nonNullTypes = value.elements
             .filterNot { it is JsonNull }
@@ -25,10 +25,10 @@ class JsonValidatorVisitor: JsonVisitor {
         }
 
         // Continua visita recursiva
-        value.elements.forEach { it.accept(this) }
+        value.elements.forEach { it.isValidType(this) }
     }
 
-    override fun visit(value: JsonObject) {
+    override fun validate(value: JsonObject) {
         // Validar as chaves
         for (key in value.entries.keys) {
             if (key.isBlank()) {

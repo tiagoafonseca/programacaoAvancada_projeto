@@ -1,7 +1,7 @@
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test
 
-class JsonValidatorVisitatorTest {
+class JsonValidateVisitatorTest {
 
     @Test
     fun testValidKeys() {
@@ -9,8 +9,8 @@ class JsonValidatorVisitatorTest {
             mapOf("name" to JsonString("Ana"), "age" to JsonNumber(22))
         )
 
-        val validator = JsonValidatorVisitor()
-        json.accept(validator)
+        val validator = JsonBaseValidator()
+        json.isValidType(validator)
 
         assertTrue(validator.isValid)
     }
@@ -21,8 +21,8 @@ class JsonValidatorVisitatorTest {
             mapOf("" to JsonString("oops"))
         )
 
-        val validator = JsonValidatorVisitor()
-        json.accept(validator)
+        val validator = JsonBaseValidator()
+        json.isValidType(validator)
 
         assertFalse(validator.isValid)
     }
@@ -33,8 +33,8 @@ class JsonValidatorVisitatorTest {
             mapOf("   " to JsonString("oops"))
         )
 
-        val validator = JsonValidatorVisitor()
-        json.accept(validator)
+        val validator = JsonBaseValidator()
+        json.isValidType(validator)
 
         assertFalse(validator.isValid)
     }
@@ -45,8 +45,8 @@ class JsonValidatorVisitatorTest {
             listOf(JsonNumber(1), JsonNumber(2), JsonNumber(3))
         )
 
-        val validator = JsonValidatorVisitor()
-        json.accept(validator)
+        val validator = JsonBaseValidator()
+        json.isValidType(validator)
 
         assertTrue(validator.isValid)
     }
@@ -57,8 +57,8 @@ class JsonValidatorVisitatorTest {
             listOf(JsonString("a"), JsonNull, JsonString("b"))
         )
 
-        val validator = JsonValidatorVisitor()
-        json.accept(validator)
+        val validator = JsonBaseValidator()
+        json.isValidType(validator)
 
         assertTrue(validator.isValid)
     }
@@ -69,8 +69,8 @@ class JsonValidatorVisitatorTest {
             listOf(JsonNumber(1), JsonString("oops"), JsonNull)
         )
 
-        val validator = JsonValidatorVisitor()
-        json.accept(validator)
+        val validator = JsonBaseValidator()
+        json.isValidType(validator)
 
         assertFalse(validator.isValid)
     }

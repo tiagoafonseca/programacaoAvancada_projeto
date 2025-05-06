@@ -3,8 +3,8 @@ fun main() {
     println(obj.toJsonString())
 
     fun validateJson(json: JsonValue): Boolean {
-        val validator = JsonValidatorVisitor()
-        json.accept(validator)
+        val validator = JsonBaseValidator()
+        json.isValidType(validator)
         return validator.isValid
     }
 
