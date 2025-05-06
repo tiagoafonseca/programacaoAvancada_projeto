@@ -1,5 +1,9 @@
 fun main() {
-    val obj = JsonObject(mapOf("name" to JsonString("Alice")))
+    val obj = JsonObject(mapOf(
+        "name" to JsonString("Alice"),
+        "age" to JsonNumber(30),
+        "active" to JsonBoolean(true)
+    ));
     println(obj.toJsonString())
 
     fun validateJson(json: JsonValue): Boolean {

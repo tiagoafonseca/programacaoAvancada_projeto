@@ -1,4 +1,4 @@
-sealed interface JsonValidator {
+sealed interface JsonValidate {
     fun validate(value: JsonString)
     fun validate(value: JsonNumber)
     fun validate(value: JsonBoolean)
