@@ -36,7 +36,7 @@ class InferenceTest {
     fun testDataClass() {
         val p = Person("Ana", 25, true)
         val json = fromKotlinObject(p)
-        assertEquals("{\"name\":\"Ana\",\"age\":25,\"active\":true}", json.toJsonString())
+        assertEquals("{\"active\":true,\"age\":25,\"name\":\"Ana\"}", json.toJsonString())
     }
 
     @Test
@@ -48,7 +48,7 @@ class InferenceTest {
         )
 
         val json = fromKotlinObject(complex)
-        val expected = "{\"user\":{\"name\":\"Ana\",\"age\":25,\"active\":true},\"roles\":[\"ADMIN\",\"USER\"],\"verified\":true}"
+        val expected = "{\"user\":{\"active\":true,\"age\":25,\"name\":\"Ana\"},\"roles\":[\"ADMIN\",\"USER\"],\"verified\":true}"
         assertEquals(expected, json.toJsonString())
     }
 }
