@@ -14,7 +14,7 @@ data class JsonObject(val entries: Map<String, JsonValue>) : JsonValue {
         return JsonObject(filteredElements)
     }
 
-    override fun isValidType(validator: JsonValidator) {
+    override fun isValidType(validator: JsonValidate) {
         validator.validate(this)
         entries.values.forEach { it.isValidType(validator) }
     }

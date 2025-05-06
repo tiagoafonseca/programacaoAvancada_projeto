@@ -6,7 +6,7 @@ data class JsonString(val value: String) : JsonValue {
         return "\"" + value.replace("\"", "\\\"") + "\""
     }
 
-    override fun isValidType(validator: JsonValidator) {
+    override fun isValidType(validator: JsonValidate) {
         validator.validate(this)
     }
 }

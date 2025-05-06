@@ -4,7 +4,7 @@
 data object JsonNull : JsonValue {
     override fun toJsonString(): String = "null"
 
-    override fun isValidType(validator: JsonValidator) {
+    override fun isValidType(validator: JsonValidate) {
         validator.validate(this)
     }
 }

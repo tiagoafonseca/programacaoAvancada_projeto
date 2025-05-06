@@ -18,7 +18,7 @@ data class JsonArray(val elements: List<JsonValue>) : JsonValue {
         return JsonArray(mappedElements)
     }
 
-    override fun isValidType(validator: JsonValidator) {
+    override fun isValidType(validator: JsonValidate) {
         validator.validate(this)
         elements.forEach { it.isValidType(validator) }
     }

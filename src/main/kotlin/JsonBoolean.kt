@@ -4,7 +4,7 @@
 data class JsonBoolean(val value: Boolean) : JsonValue {
     override fun toJsonString(): String = value.toString()
 
-    override fun isValidType(validator: JsonValidator) {
+    override fun isValidType(validator: JsonValidate) {
         validator.validate(this)
     }
 

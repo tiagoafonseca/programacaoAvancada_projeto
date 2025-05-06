@@ -1,5 +1,5 @@
 
-class JsonBaseValidator: JsonValidator {
+class JsonBaseValidator: JsonValidate {
 
     var isValid: Boolean = true
         private set
