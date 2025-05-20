@@ -1,7 +1,9 @@
+package main
+
 /**
- * Represents a JSON number value.
+ * Represents a JSON boolean value (true or false).
  */
-data class JsonNumber(val value: Number) : JsonValue {
+data class JsonBoolean(val value: Boolean) : JsonValue {
     override fun toJsonString(): String = value.toString()
 
     override fun isValidType(validator: JsonValidate) {

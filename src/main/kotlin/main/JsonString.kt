@@ -1,3 +1,5 @@
+package main
+
 /**
  * Represents a JSON text value ("Hello World").
  */

@@ -1,3 +1,5 @@
+package main
+
 /**
  * Base interface for all JSON values.
  */

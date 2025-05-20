@@ -1,3 +1,5 @@
+package main
+
 sealed interface JsonValidate {
     fun validate(value: JsonString)
     fun validate(value: JsonNumber)

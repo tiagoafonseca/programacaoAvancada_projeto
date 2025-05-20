@@ -1,3 +1,5 @@
+package main
+
 import kotlin.reflect.full.memberProperties
 import kotlin.reflect.jvm.isAccessible
 

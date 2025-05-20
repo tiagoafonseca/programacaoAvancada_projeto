@@ -1,4 +1,4 @@
-
+package main
 class JsonBaseValidator: JsonValidate {
 
     var isValid: Boolean = true

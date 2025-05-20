@@ -1,3 +1,7 @@
+import main.JsonArray
+import main.JsonBoolean
+import main.JsonNumber
+import main.JsonString
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 

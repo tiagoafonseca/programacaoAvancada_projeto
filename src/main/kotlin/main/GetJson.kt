@@ -1,3 +1,5 @@
+package main
+
 import com.sun.net.httpserver.HttpServer
 import kotlin.reflect.KClass
 import kotlin.reflect.full.findAnnotation
